@@ -6,15 +6,17 @@ public class Main{
         Scanner leitura = new Scanner(System.in);
         System.out.println("Digite o limite do cartao: ");
         double limite = leitura.nextDouble();
+        leitura.nextLine();
         CartaoDeCredito cartao = new CartaoDeCredito(limite);
 
         int sair = 1;
         while(sair != 0){
             System.out.println("Digite a descricao da compra:");
-            String descricao = leitura.next();
+            String descricao = leitura.nextLine();
 
             System.out.println("Digite o valor da compra:");
             double valor = leitura.nextDouble();
+            leitura.nextLine();
 
             Compra compra = new Compra(descricao, valor);
             boolean compraRealizada = cartao.lancaCompra(compra);
@@ -23,6 +25,7 @@ public class Main{
                 System.out.println("Compra realizada!");
                 System.out.println("Digite 0 para sair ou 1 para continuar");
                 sair = leitura.nextInt();
+                leitura.nextLine();
             } else {
                 System.out.println("Saldo insuficiente!");
                 sair = 0;
