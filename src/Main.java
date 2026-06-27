@@ -11,7 +11,7 @@ public class Main{
         int sair = 1;
         while(sair != 0){
             System.out.println("Digite a descricao da compra:");
-            String descricao = leitura.nextLine();
+            String descricao = leitura.next();
 
             System.out.println("Digite o valor da compra:");
             double valor = leitura.nextDouble();
